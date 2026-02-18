@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenWeb2Apk - Turn Website into Android App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">GenWeb2Apk</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Turn Your Website Into an Android App</h1>
+                <p class="subhead">Enter your site URL and app name, and we'll generate a ready-to-use APK for you.</p>
+                
+                <div class="form-card">
+                    <form id="generate-form">
+                        <div class="form-group">
+                            <label for="url">Website URL</label>
+                            <input type="url" id="url" placeholder="https://example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="appName">App Name</label>
+                            <input type="text" id="appName" placeholder="My Awesome App" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Generate App</button>
+                    </form>
+                </div>
+
+                <div class="features-preview">
+                    <div class="feature-item">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Fast Conversion</h3>
+                        <p>Get your APK in minutes, not hours.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>Customizable</h3>
+                        <p>Choose colors, icons, and splash screens.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Ready to Publish</h3>
+                        <p>Generated apps are store-ready.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-links">
+                <a href="features.html">Features</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <p class="copyright">&copy; 2025 GenWeb2Apk. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('generate-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const url = document.getElementById('url').value;
+            const appName = document.getElementById('appName').value;
+            if (url && appName) {
+                localStorage.setItem('genWeb2Apk_url', url);
+                localStorage.setItem('genWeb2Apk_name', appName);
+                window.location.href = 'confirmation.html';
+            }
+        });
+    </script>
+</body>
+</html>
